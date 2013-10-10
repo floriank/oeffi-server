@@ -1,0 +1,10 @@
+{
+  "from": {
+    "id": 12996,
+    "type": "STATION"
+  },
+  "to": {
+    "id": 13000,
+    "type": "STATION"
+  }
+}

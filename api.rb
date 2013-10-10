@@ -1,7 +1,7 @@
 require "java"
-require "lib/public-enabler.jar"
-require "lib/org.json.jar"
-require "lib/kxml2.jar"
+require "lib/vendor/public-enabler.jar"
+require "lib/vendor/org.json.jar"
+require "lib/vendor/kxml2.jar"
 
 
 module Api
@@ -16,20 +16,30 @@ end
 
 date         = Java::JavaUtil::Date.new
 provider     = Api::NasaProvider.new
-fromType     = Api::LocationType::ANY
-fromLocation = Api::Location.new(fromType, 0, nil, "Halle(Saale)Hbf")
-toType       = Api::LocationType::ANY
-toLocation   = Api::Location.new(toType, 0, nil, "Leipzig Hbf")
+fromType     = Api::LocationType::STATION
+fromLocation = Api::Location.new(fromType, 12996)
+toType       = Api::LocationType::STATION
+toLocation   = Api::Location.new(toType, 13000)
 
-trips = provider.queryTrips fromLocation, nil, toLocation, date, true, 4, Api::Product::ALL, Api::NetworkProvider::WalkSpeed::NORMAL, Api::NetworkProvider::Accessibility::NEUTRAL, nil
+trips = provider.queryTrips fromLocation, nil, toLocation, date, true, 2, Api::Product::ALL, Api::NetworkProvider::WalkSpeed::NORMAL, Api::NetworkProvider::Accessibility::NEUTRAL, nil
 
-from = trips.ambiguousFrom.to_a.shuffle.take(1).first
+trips = trips.trips.to_a.collect do |trip|
+  {
+    id: trip.id,
+    numChanges: trip.numChanges,
+    departure: trip.get_first_departure_time.to_gmt_string
+  }
+end
 
-trips = Api::query from, toLocation
+p trips
 
-to = trips.ambiguousTo.to_a.first
+# from = trips.ambiguousFrom.to_a.shuffle.take(1).first
 
-p "Querying #{from.name} (#{from.type}) to #{to.name} (#{to.type}) at #{Time.now}"
-trips = Api::query from, to
+# trips = Api::query from, toLocation
 
-p trips.trips.to_a
+# to = trips.ambiguousTo.to_a.first
+
+# p "Querying #{from.name} (#{from.type}) to #{to.name} (#{to.type}) at #{Time.now}"
+# trips = Api::query from, to
+
+# p trips.trips.to_a
