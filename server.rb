@@ -1,7 +1,6 @@
 require "java"
 require "grape"
 require "json"
-require "lib/api"
 
 require File.expand_path(File.join(*%w[ lib/api ]), File.dirname(__FILE__))
 
