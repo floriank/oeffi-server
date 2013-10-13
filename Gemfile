@@ -15,7 +15,7 @@ end
 
 
 gem "trinidad"
-gem "trinidad_daemon_extension", :groups => [:production, :integration]
+gem "trinidad_daemon_extension"
 gem "trinidad_init_services"
 
 gem "capistrano"
