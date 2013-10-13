@@ -15,5 +15,6 @@ end
 
 gem "trinidad"
 
-#gem "capistrano"
+gem "capistrano"
+gem "capistrano-rbenv"
 #gem "railsless-deploy"
