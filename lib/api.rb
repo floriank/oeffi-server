@@ -1,3 +1,5 @@
-Dir["#{File.dirname(__FILE__)}/**/*.rb"].each do |file|
+Dir["vendor/*.jar"].each do |file|
   require file
 end
+
+require File.expand_path "api/stations"
