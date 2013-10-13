@@ -13,7 +13,10 @@ group :test do
   gem 'nyan-cat-formatter'
 end
 
-gem "trinidad"
 
-#gem "capistrano"
-#gem "railsless-deploy"
+gem "trinidad"
+gem "trinidad_daemon_extension", :groups => [:production, :integration]
+
+gem "capistrano"
+gem "capistrano-rbenv"
+gem "capistrano-multistage"

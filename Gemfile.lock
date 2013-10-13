@@ -7,9 +7,24 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    atomic (1.1.14)
     atomic (1.1.14-java)
     backports (3.3.4)
     builder (3.2.2)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capistrano-multistage (0.0.4)
+      capistrano (>= 2.12.0)
+      rake
+    capistrano-platform-resources (0.1.3)
+      capistrano (< 3)
+    capistrano-rbenv (1.0.5)
+      capistrano (< 3)
+      capistrano-platform-resources (>= 0.1.3)
     descendants_tracker (0.0.3)
     diff-lcs (1.2.4)
     grape (0.6.0)
@@ -23,12 +38,21 @@ GEM
       rack-mount
       virtus
     hashie (2.0.5)
+    highline (1.6.19)
     i18n (0.6.5)
     jruby-rack (1.1.13.2)
+    json (1.8.0)
     json (1.8.0-java)
     minitest (4.7.5)
     multi_json (1.8.1)
     multi_xml (0.5.5)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nyan-cat-formatter (0.5.1)
       rspec (>= 2.13)
     rack (1.5.2)
@@ -47,11 +71,15 @@ GEM
     rspec-expectations (2.14.3)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.3)
+    thread_safe (0.1.3)
+      atomic
     thread_safe (0.1.3-java)
       atomic
     trinidad (1.4.5)
       jruby-rack (>= 1.1.13)
       trinidad_jars (>= 1.2.3)
+    trinidad_daemon_extension (0.4.0)
+      trinidad (>= 1.3.5)
     trinidad_jars (1.2.4)
     tzinfo (0.3.38)
     virtus (0.5.5)
@@ -63,6 +91,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  capistrano
+  capistrano-multistage
+  capistrano-rbenv
   grape
   json
   nyan-cat-formatter
@@ -70,3 +101,4 @@ DEPENDENCIES
   rake
   rspec
   trinidad
+  trinidad_daemon_extension
