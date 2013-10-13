@@ -16,7 +16,7 @@ end
 
 gem "trinidad"
 gem "trinidad_daemon_extension", :groups => [:production, :integration]
-gem "trinidad_init_services", :groups => [:production, :integration]
+gem "trinidad_init_services"
 
 gem "capistrano"
 gem "capistrano-rbenv"
