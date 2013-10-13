@@ -4,7 +4,7 @@ set :default_environment, {
 server "ryuk.it.ewerk.com", :web, :app, :primary => true
 
 set :user, "deployer"
-set :branch, "HEAD"
+set :branch, "develop"
 
 set :keep_releases, "2"
 set :rails_env, stage

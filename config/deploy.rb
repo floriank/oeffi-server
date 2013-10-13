@@ -11,8 +11,7 @@ set :application, "lvb-fahrplan-api"
 set :deploy_to, "/var/www/vhosts/#{application}"
 
 set :scm, "git"
-#set :repository, "gitolite@git.it.ewerk.com:lvb-fahrplan-api"
-set :repository, "."
+set :repository, "gitolite@git.it.ewerk.com:lvb-fahrplan-api"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -21,8 +20,7 @@ namespace :deploy do
   %w[start stop restart reload].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
-      p "running"
-      #run "/etc/init.d/unicorn_lvb-traffic-check #{command}"
+      run "/etc/init.d/trinidad_#{application} #{command}"
     end
   end
 end
