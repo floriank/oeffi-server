@@ -1,4 +1,4 @@
-Dir["vendor/*.jar"].each do |file|
+Dir["lib/vendor/*.jar"].each do |file|
   require file
 end
 

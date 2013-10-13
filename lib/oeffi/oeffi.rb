@@ -1,7 +1,4 @@
 require "java"
-require "lib/vendor/public-enabler.jar"
-require "lib/vendor/org.json.jar"
-require "lib/vendor/kxml2.jar"
 
 module Oeffi
   include_package "de.schildbach.pte"
