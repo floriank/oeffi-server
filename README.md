@@ -14,17 +14,11 @@ To start the server:
 1. clone the project
 2. bundle
 3. Start the server:
-
-> trinidad -r config.ru
-
+````
+trinidad -r config.ru
+````
 4. curl (or [httpie](https://github.com/jkbr/httpie)) the server:
-
-
-> curl http://localhost:3000
-
-or
-
-> http GET http://localhost:3000
-
-
+```
+curl http://localhost:3000
+```
 5. The automcomplete can be found as a POST to /search
