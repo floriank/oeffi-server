@@ -18,7 +18,7 @@ gem "trinidad"
 gem "trinidad_daemon_extension"
 gem "trinidad_init_services"
 
-gem "pry"
+gem "pry", :group => :development
 
 gem "capistrano"
 gem "capistrano-rbenv"

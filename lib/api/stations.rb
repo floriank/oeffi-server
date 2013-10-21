@@ -1,7 +1,6 @@
 Dir.glob File.expand_path("lib/oeffi/*.rb") do |file|
   require file
 end
-require "ruby-debug"
 
 module API
   class Stations < Grape::API

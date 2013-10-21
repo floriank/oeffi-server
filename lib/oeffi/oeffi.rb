@@ -1,5 +1,4 @@
 require "java"
-require "pry"
 
 module Oeffi
   include_package "de.schildbach.pte"
