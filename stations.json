@@ -1,9 +1,13 @@
 {
   "from": {
-    "id": 12996,
+    "id": 10789,
     "type": "STATION"
   },
   "to": {
+    "id": 11345,
+    "type": "STATION"
+  },
+  "via": {
     "id": 13000,
     "type": "STATION"
   }
