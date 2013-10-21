@@ -1,4 +1,6 @@
-require File.expand_path "lib/oeffi/oeffi"
+Dir.glob File.expand_path("lib/oeffi/*.rb") do |file|
+  require file
+end
 require "ruby-debug"
 
 module API
@@ -17,8 +19,9 @@ module API
       optional :via, desc: "Optional Via Station"
       optional :connections,  desc: "Optional number of connections"
     end
+
     post "/trips" do
-      ::Oeffi::query(params.from, params.to, params.via, params.connections)
+      TripList.new(::Oeffi::query(params.from, params.to, params.via, params.connections)).as_json
     end
   end
 end

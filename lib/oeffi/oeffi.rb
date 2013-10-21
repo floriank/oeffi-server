@@ -31,20 +31,11 @@ module Oeffi
     viaLocation  = convert via unless via.nil?
 
     result = provider.queryTrips(fromLocation, viaLocation, toLocation, date, true, 4, Product::ALL, NetworkProvider::WalkSpeed::NORMAL, NetworkProvider::Accessibility::NEUTRAL, nil)
-
-    trips = result.trips.to_a.collect do |trip|
-      {
-        id: trip.id,
-        numChanges: trip.numChanges,
-        departure: trip.get_first_departure_time.to_gmt_string
-      }
-    end
-
-    return trips
+    result.trips.to_a
   end
 
   def self.convert(station)
     type = LocationType::STATION
-    return Location.new(type, station.id)
+    return Location.new(type, station[:id])
   end
 end
