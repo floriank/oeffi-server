@@ -16,7 +16,7 @@ module API
     mount API::Stations
 
     get "/" do
-      {identifier: "lvb-fahrplan-api", version: "0.0.1"}
+      {identifier: "oeffi-api", version: "0.0.1"}
     end
   end
 end
