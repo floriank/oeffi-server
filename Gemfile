@@ -18,6 +18,8 @@ gem "trinidad"
 gem "trinidad_daemon_extension"
 gem "trinidad_init_services"
 
+gem "pry"
+
 gem "capistrano"
 gem "capistrano-rbenv"
 gem "capistrano-multistage"

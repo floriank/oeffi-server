@@ -1,4 +1,5 @@
 require File.expand_path "lib/oeffi/oeffi"
+require "ruby-debug"
 
 module API
   class Stations < Grape::API
