@@ -58,6 +58,11 @@ GEM
       net-ssh (>= 2.6.5)
     nyan-cat-formatter (0.5.1)
       rspec (>= 2.13)
+    oeffi (0.0.4)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.12.2-java)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -110,6 +115,7 @@ DEPENDENCIES
   grape
   json
   nyan-cat-formatter
+  oeffi (= 0.0.4)
   pry
   rack-test
   rake
