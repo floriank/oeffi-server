@@ -1,13 +1,10 @@
 oeffi-server
 ============
 
-The JRuby implementation of a JSON-APi for the Java-based Oeffi library.
+The JRuby implementation of a small server that utilizes the oeffi-gem, based on the public transport enabler library by Andreas Schildbach, which powers [Oeffi](http://oeffi.schildbach.de).
 
 Requires JRuby.
 
-Uses the public enabler library by Andreas Schildbach, which powers [Oeffi](http://oeffi.schildbach.de).
-
-The only method currently supported is a simple autocomplete for a given string. The current provider used is the NASA Provider.
 
 To start the server:
 
@@ -21,4 +18,4 @@ trinidad -r config.ru
 ```
 curl http://localhost:3000
 ```
-5. The automcomplete can be found as a POST to /search
+5. The automcomplete can be found as a POST to /suggest
