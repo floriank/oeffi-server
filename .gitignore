@@ -4,3 +4,5 @@ log/
 tmp/
 lvb-fahrplan-api.war
 .rspec
+.ruby-gemset
+.ruby-version
