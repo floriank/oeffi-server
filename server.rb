@@ -1,8 +1,13 @@
 require "java"
 require "grape"
 require "json"
+require "oeffi"
 
 require File.expand_path(File.join(*%w[ lib/api ]), File.dirname(__FILE__))
+
+Oeffi.configure do |oeffi|
+  oeffi.provider = :nasa
+end
 
 module API
   class LVB < Grape::API
@@ -16,7 +21,7 @@ module API
     mount API::Stations
 
     get "/" do
-      {identifier: "oeffi-api", version: "0.0.1"}
+      {identifier: "oeffi-api", version: Oeffi::VERSION}
     end
   end
 end
