@@ -1,3 +1,6 @@
 *.sublime-*
 *.ruby-*tmp/
 log/
+tmp/
+lvb-fahrplan-api.war
+.rspec
