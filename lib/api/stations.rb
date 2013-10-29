@@ -18,8 +18,7 @@ module API
     end
     post "/trips" do
       status 200
-      trips = Oeffi::find_trips(params.from, params.to, params.via, params.count)
-      binding.pry
+      trips = Oeffi::find_trips(params)
     end
   end
 end
