@@ -54,7 +54,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    oeffi (0.0.6)
+    oeffi (0.0.7)
     pry (0.9.12.2-java)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -104,7 +104,7 @@ DEPENDENCIES
   capistrano-rbenv
   grape
   json
-  oeffi (= 0.0.6)
+  oeffi (= 0.0.7)
   pry
   rack-test
   rake
