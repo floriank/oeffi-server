@@ -54,17 +54,9 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-<<<<<<< HEAD
-    oeffi (0.0.5)
-=======
     nyan-cat-formatter (0.5.1)
       rspec (>= 2.13)
     oeffi (0.0.6)
-    pry (0.9.12.2)
-      coderay (~> 1.0.5)
-      method_source (~> 0.8)
-      slop (~> 3.4)
->>>>>>> release/0.0.2
     pry (0.9.12.2-java)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -114,12 +106,8 @@ DEPENDENCIES
   capistrano-rbenv
   grape
   json
-<<<<<<< HEAD
-  oeffi (= 0.0.5)
-=======
   nyan-cat-formatter
   oeffi (= 0.0.6)
->>>>>>> release/0.0.2
   pry
   rack-test
   rake
