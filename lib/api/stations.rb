@@ -18,7 +18,7 @@ module API
     end
     post "/trips" do
       status 200
-      trips = Oeffi::find_trips(params)
+      Oeffi::find_trips(params).as_json
     end
   end
 end
