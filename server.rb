@@ -14,6 +14,7 @@ module API
 
     format :json
 
+
     rescue_from :all do |e|
       Rack::Response.new({ error: "#{e.message}"}.to_json, 500, { "Content-type" => "application/json" })
     end
