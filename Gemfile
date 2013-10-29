@@ -4,13 +4,12 @@ source "https://rubygems.org"
 gem 'bundler'
 gem 'grape'
 gem 'json'
-gem 'oeffi', '0.0.4'
+gem 'oeffi', '0.0.5'
 gem 'rake', :groups => [:development, :test]
 
 group :test do
   gem 'rack-test'
   gem 'rspec'
-  gem 'nyan-cat-formatter'
 end
 
 
