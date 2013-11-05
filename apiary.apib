@@ -1,0 +1,872 @@
+FORMAT: 1A
+HOST: http://87.106.19.104:8181
+
+# Oeffi
+Oeffi enables you to to use a basic connection querying and station suggesting.
+
+
+## Station suggestions [/suggest]
+provides suggestions based on a name given.
+
+### Search for stations and adresses [POST]
++ Request (application/json)
+
+        { "name": "Wald" }
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 8006167, 
+                "lat": 47.621371, 
+                "lon": 8.219529, 
+                "name": "Waldshut", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8000054, 
+                "lat": 51.349162, 
+                "lon": 8.576068, 
+                "name": "Brilon Wald", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8002159, 
+                "lat": 49.309815, 
+                "lon": 12.838807, 
+                "name": "Furth i Wald", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8002159, 
+                "lat": 49.309815, 
+                "lon": 12.838807, 
+                "name": "Furth im Wald", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8010359, 
+                "lat": 51.07526, 
+                "lon": 13.014195, 
+                "name": "Waldheim", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 4133, 
+                "lat": 51.06415, 
+                "lon": 11.932946, 
+                "name": "Waldau", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8006155, 
+                "lat": 49.98272, 
+                "lon": 12.057267, 
+                "name": "Waldershof", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8000763, 
+                "lat": 47.925161, 
+                "lon": 9.752289, 
+                "name": "Waldsee Bad", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8006164, 
+                "lat": 48.202955, 
+                "lon": 12.408026, 
+                "name": "Waldkraiburg", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 8013210, 
+                "lat": 51.772724, 
+                "lon": 13.617246, 
+                "name": "Walddrehna", 
+                "type": "STATION"
+            }, 
+            {
+                "id": 5925, 
+                "lat": 52.438322, 
+                "lon": 12.120973, 
+                "name": "Genthin, Wald", 
+                "type": "STATION"
+            }
+        ]
+
+## Trip queries [/trips]
+Query for trips based on given stations/addresses
+
+
++ Request (application/json)
+
+        {
+          "from": {
+            "id": 10789,
+            "type": "STATION"
+          },
+          "to": {
+            "id": 11345,
+            "type": "STATION"
+          },
+          "via": {
+            "id": 13000,
+            "type": "STATION"
+          }
+        }
+
+
+### Query trips [POST]
++ Response 200 (application/json)
+
+    + Body
+
+        [
+            {
+                "arrival": 1383060480000, 
+                "departure": 1383058860000, 
+                "from": "Adler", 
+                "id": "C0-0", 
+                "legs": [
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Sommerfeld", 
+                        "label": "TStr3", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383058860000
+                                }, 
+                                "label": "Adler", 
+                                "position": {
+                                    "lat": 51.320297, 
+                                    "lng": 12.330197
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383058980000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383058980000
+                                }, 
+                                "label": "Markranstädter Str.", 
+                                "position": {
+                                    "lat": 51.325304, 
+                                    "lng": 12.334206
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059040000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059040000
+                                }, 
+                                "label": "Elster-Passage", 
+                                "position": {
+                                    "lat": 51.328693, 
+                                    "lng": 12.336499
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059100000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059100000
+                                }, 
+                                "label": "Felsenkeller", 
+                                "position": {
+                                    "lat": 51.332496, 
+                                    "lng": 12.338899
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059220000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059220000
+                                }, 
+                                "label": "Angerbrücke", 
+                                "position": {
+                                    "lat": 51.337395, 
+                                    "lng": 12.340103
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059280000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059280000
+                                }, 
+                                "label": "Sportforum", 
+                                "position": {
+                                    "lat": 51.340694, 
+                                    "lng": 12.351196
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059400000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059400000
+                                }, 
+                                "label": "Waldplatz", 
+                                "position": {
+                                    "lat": 51.342303, 
+                                    "lng": 12.359098
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059520000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059520000
+                                }, 
+                                "label": "Leibnizstr.", 
+                                "position": {
+                                    "lat": 51.343301, 
+                                    "lng": 12.365003
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059640000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059700000
+                                }, 
+                                "label": "Goerdelerring", 
+                                "position": {
+                                    "lat": 51.344199, 
+                                    "lng": 12.370999
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059880000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }, 
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Markkleeberg, Schillerplatz", 
+                        "label": "TStr11", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060000000
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060180000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060180000
+                                }, 
+                                "label": "Augustusplatz", 
+                                "position": {
+                                    "lat": 51.338905, 
+                                    "lng": 12.382002
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060360000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060360000
+                                }, 
+                                "label": "Wilhelm-Leuschner-Platz", 
+                                "position": {
+                                    "lat": 51.336001, 
+                                    "lng": 12.375602
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060480000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hohe Str.", 
+                                "position": {
+                                    "lat": 51.330994, 
+                                    "lng": 12.373597
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }
+                ], 
+                "to": "Hohe Str."
+            }, 
+            {
+                "arrival": 1383060780000, 
+                "departure": 1383059220000, 
+                "from": "Adler", 
+                "id": "C0-1", 
+                "legs": [
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Mockau, Post", 
+                        "label": "TStr1", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059220000
+                                }, 
+                                "label": "Adler", 
+                                "position": {
+                                    "lat": 51.320297, 
+                                    "lng": 12.330197
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059340000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059340000
+                                }, 
+                                "label": "Markranstädter Str.", 
+                                "position": {
+                                    "lat": 51.325304, 
+                                    "lng": 12.334206
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059400000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059400000
+                                }, 
+                                "label": "Elster-Passage", 
+                                "position": {
+                                    "lat": 51.328693, 
+                                    "lng": 12.336499
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059460000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059460000
+                                }, 
+                                "label": "Felsenkeller", 
+                                "position": {
+                                    "lat": 51.332496, 
+                                    "lng": 12.338899
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059580000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059580000
+                                }, 
+                                "label": "Angerbrücke", 
+                                "position": {
+                                    "lat": 51.337395, 
+                                    "lng": 12.340103
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059640000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059640000
+                                }, 
+                                "label": "Sportforum", 
+                                "position": {
+                                    "lat": 51.340694, 
+                                    "lng": 12.351196
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059760000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059760000
+                                }, 
+                                "label": "Waldplatz", 
+                                "position": {
+                                    "lat": 51.342303, 
+                                    "lng": 12.359098
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059880000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059880000
+                                }, 
+                                "label": "Westplatz", 
+                                "position": {
+                                    "lat": 51.338995, 
+                                    "lng": 12.362406
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059940000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059940000
+                                }, 
+                                "label": "Gottschedstr.", 
+                                "position": {
+                                    "lat": 51.341305, 
+                                    "lng": 12.367592
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060060000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060060000
+                                }, 
+                                "label": "Goerdelerring", 
+                                "position": {
+                                    "lat": 51.344199, 
+                                    "lng": 12.370999
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060240000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }, 
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Lößnig", 
+                        "label": "TStr10", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060300000
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060480000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060480000
+                                }, 
+                                "label": "Augustusplatz", 
+                                "position": {
+                                    "lat": 51.338905, 
+                                    "lng": 12.382002
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060660000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060660000
+                                }, 
+                                "label": "Wilhelm-Leuschner-Platz", 
+                                "position": {
+                                    "lat": 51.336001, 
+                                    "lng": 12.375602
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060780000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hohe Str.", 
+                                "position": {
+                                    "lat": 51.330994, 
+                                    "lng": 12.373597
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }
+                ], 
+                "to": "Hohe Str."
+            }, 
+            {
+                "arrival": 1383061080000, 
+                "departure": 1383059460000, 
+                "from": "Adler", 
+                "id": "C0-2", 
+                "legs": [
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Taucha (b. Leipzig), An der Bürgerruhe", 
+                        "label": "TStr3", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059460000
+                                }, 
+                                "label": "Adler", 
+                                "position": {
+                                    "lat": 51.320297, 
+                                    "lng": 12.330197
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059580000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059580000
+                                }, 
+                                "label": "Markranstädter Str.", 
+                                "position": {
+                                    "lat": 51.325304, 
+                                    "lng": 12.334206
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059640000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059640000
+                                }, 
+                                "label": "Elster-Passage", 
+                                "position": {
+                                    "lat": 51.328693, 
+                                    "lng": 12.336499
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059700000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059700000
+                                }, 
+                                "label": "Felsenkeller", 
+                                "position": {
+                                    "lat": 51.332496, 
+                                    "lng": 12.338899
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059820000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059820000
+                                }, 
+                                "label": "Angerbrücke", 
+                                "position": {
+                                    "lat": 51.337395, 
+                                    "lng": 12.340103
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383059880000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383059880000
+                                }, 
+                                "label": "Sportforum", 
+                                "position": {
+                                    "lat": 51.340694, 
+                                    "lng": 12.351196
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060000000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060000000
+                                }, 
+                                "label": "Waldplatz", 
+                                "position": {
+                                    "lat": 51.342303, 
+                                    "lng": 12.359098
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060120000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060120000
+                                }, 
+                                "label": "Leibnizstr.", 
+                                "position": {
+                                    "lat": 51.343301, 
+                                    "lng": 12.365003
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060240000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060300000
+                                }, 
+                                "label": "Goerdelerring", 
+                                "position": {
+                                    "lat": 51.344199, 
+                                    "lng": 12.370999
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060480000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }, 
+                    {
+                        "delays": {
+                            "arrival": 0, 
+                            "departure": 0
+                        }, 
+                        "destination": "Dölitz, Straßenbahnhof", 
+                        "label": "TStr11", 
+                        "path": [], 
+                        "stops": [
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060600000
+                                }, 
+                                "label": "Hauptbahnhof", 
+                                "position": {
+                                    "lat": 51.343894, 
+                                    "lng": 12.380591
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060780000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060780000
+                                }, 
+                                "label": "Augustusplatz", 
+                                "position": {
+                                    "lat": 51.338905, 
+                                    "lng": 12.382002
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383060960000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": 1383060960000
+                                }, 
+                                "label": "Wilhelm-Leuschner-Platz", 
+                                "position": {
+                                    "lat": 51.336001, 
+                                    "lng": 12.375602
+                                }
+                            }, 
+                            {
+                                "arrival": {
+                                    "delay": 0, 
+                                    "time": 1383061080000
+                                }, 
+                                "departure": {
+                                    "delay": 0, 
+                                    "time": null
+                                }, 
+                                "label": "Hohe Str.", 
+                                "position": {
+                                    "lat": 51.330994, 
+                                    "lng": 12.373597
+                                }
+                            }
+                        ], 
+                        "type": "Public"
+                    }
+                ], 
+                "to": "Hohe Str."
+            }
+        ]
+
+
