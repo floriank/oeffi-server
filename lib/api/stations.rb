@@ -5,7 +5,7 @@ module API
     end
     post "/suggest" do
       status 200
-      Oeffi::autocomplete(params.name)
+      Oeffi::autocomplete(params.name, {:lat => params.lat.to_f, :lon => params.lon.to_f})
     end
 
     params do

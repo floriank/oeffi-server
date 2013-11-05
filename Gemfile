@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem 'bundler'
 gem 'grape'
 gem 'json'
-gem 'oeffi', '0.0.7'
+gem 'oeffi', "0.0.8"
 gem 'rake', :groups => [:development, :test]
 
 group :test do
