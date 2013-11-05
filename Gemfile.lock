@@ -58,7 +58,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    oeffi (0.0.8)
+    oeffi (0.0.9)
       geokit
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -115,7 +115,7 @@ DEPENDENCIES
   capistrano-rbenv
   grape
   json
-  oeffi (= 0.0.8)
+  oeffi (= 0.0.9)
   pry
   rack-test
   rake
